@@ -19213,7 +19213,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     loadSparkline = function(language) {
       return $.ajax({
         type: 'GET',
-        url: "" + language + "_github.csv",
+        url: "push_data/" + language + "_github.csv",
         data: null,
         success: function(data) {
           var dates, line, lines, max, maxDate, min, minDate, points, _i, _len;
