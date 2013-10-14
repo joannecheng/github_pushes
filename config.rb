@@ -56,6 +56,8 @@ activate :deploy do |deploy|
   deploy.method = :git
 end
 
+activate :relative_assets
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
