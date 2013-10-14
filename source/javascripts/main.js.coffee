@@ -11,7 +11,7 @@ $ ->
           points.push parseInt(line.split(',')[2])
 
         $("##{language}").sparkline points.slice(0, points.length - 1),
-          width: 400, height: 50, fillColor: '#fefefe', lineColor: '#101010'
+          width: 300, height: 50, fillColor: '#fefefe', lineColor: '#101010'
 
   languages = ['coffeescript', 'javascript', 'ruby', 'python', 'go', 'haskell', 'clojure', 'scala', 'viml', 'php', 'elixir', 'erlang']
   for language in languages
