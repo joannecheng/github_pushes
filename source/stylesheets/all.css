@@ -30,7 +30,7 @@ h1 {
     .doc a:hover {
       color: #666; }
 
-.content{
+div {
   margin-top: 10px;
   margin-left: 16px;
 }
