@@ -33,7 +33,7 @@ $ ->
     container = $('#push_counts')
     $.ajax
       type: 'GET'
-      url: "push_data/#{language}_github.csv"
+      url: "push_data/#{language}_github2.csv"
       data: null
       success: (data) ->
         lines = data.split(/\n/).slice(1)
