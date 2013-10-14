@@ -5,7 +5,7 @@ $ ->
   loadSparkline = (language) ->
     $.ajax
       type: 'GET'
-      url: "#{language}_github.csv"
+      url: "push_data/#{language}_github.csv"
       data: null
       success: (data) ->
         lines = data.split(/\n/).slice(1)
