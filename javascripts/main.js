@@ -1,25 +1,38 @@
 (function() {
   $(function() {
-    var language, languages, loadSparkline, _i, _len, _results;
+    var formatDate, language, languages, loadSparkline, _i, _len, _results;
+    formatDate = function(date) {
+      return date.toLocaleDateString();
+    };
     loadSparkline = function(language) {
       return $.ajax({
         type: 'GET',
         url: "" + language + "_github.csv",
         data: null,
         success: function(data) {
-          var line, lines, points, _i, _len;
+          var dates, line, lines, max, maxDate, min, minDate, points, _i, _len;
           lines = data.split(/\n/).slice(1);
           points = [];
+          dates = [];
           for (_i = 0, _len = lines.length; _i < _len; _i++) {
             line = lines[_i];
+            dates.push(Date.parse(line.split(',')[0]));
             points.push(parseInt(line.split(',')[2]));
           }
-          return $("#" + language).sparkline(points.slice(0, points.length - 1), {
+          min = _.min(points);
+          max = _.max(points);
+          minDate = new Date(dates[_.indexOf(points, min)]);
+          maxDate = new Date(dates[_.indexOf(points, max)]);
+          $("#" + language + "-sparkline").sparkline(points.slice(0, points.length - 1), {
             width: 300,
             height: 40,
             fillColor: '#fefefe',
             lineColor: '#101010'
           });
+          $("#" + language + " .min").html(min);
+          $("#" + language + " .min-date").html(formatDate(minDate));
+          $("#" + language + " .max").html(max);
+          return $("#" + language + " .max-date").html(formatDate(maxDate));
         }
       });
     };

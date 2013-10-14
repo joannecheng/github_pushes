@@ -45,3 +45,8 @@ caption {
   font-size: 24px;
   padding-bottom: 10px;
 }
+
+.min-date, .max-date {
+  font-size: 12px;
+  font-color: #aaaaaa;
+}
