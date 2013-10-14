@@ -36,7 +36,7 @@ div {
 }
 
 .sparklines {
-  width: 60%;
+  width: 75%;
   text-align: left;
 }
 
@@ -49,4 +49,6 @@ caption {
 .min-date, .max-date {
   font-size: 12px;
   font-color: #aaaaaa;
+  padding-left: 10px;
+  padding-right: 10px;
 }
