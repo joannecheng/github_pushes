@@ -15,7 +15,7 @@
             points.push(parseInt(line.split(',')[2]));
           }
           return $("#" + language).sparkline(points.slice(0, points.length - 1), {
-            width: 400,
+            width: 300,
             height: 50,
             fillColor: '#fefefe',
             lineColor: '#101010'
