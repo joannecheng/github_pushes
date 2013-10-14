@@ -34,3 +34,14 @@ h1 {
   margin-top: 10px;
   margin-left: 16px;
 }
+
+.sparklines {
+  width: 60%;
+  text-align: left;
+}
+
+caption {
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 10px;
+}

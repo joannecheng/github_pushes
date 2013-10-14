@@ -3,12 +3,17 @@ title: Github trends
 ---
 
 <div class="content">
-  <table>
+  <table class="sparklines">
+    <caption>Daily push counts, March 11, 2013 - October 10, 2013</caption>
+    <tbody>
     <thead>
       <th>
-        language
+        Language
       </th>
       <th>
+      </th>
+      <th></th>
+      <th></th>
       </th>
     </thead>
     <tr>
@@ -18,6 +23,8 @@ title: Github trends
       <td>
         <span id='javascript'></span>
       </td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -26,96 +33,103 @@ title: Github trends
       <td>
         <span id='coffeescript'></span>
       </td>
+      <td></td>
+      <td></td>
     </tr>
-  <tr>
-    <td>
-      ruby </td>
-    <td>
-      <span id='ruby'></span>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      python
-    </td>
-    <td>
-      <span id='python'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        ruby </td>
+      <td>
+        <span id='ruby'></span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        python
+      </td>
+      <td>
+        <span id='python'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-      php
-    </td>
-    <td>
-      <span id='php'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        php
+      </td>
+      <td>
+        <span id='php'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-      go 
-    </td>
-    <td>
-      <span id='go'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        go 
+      </td>
+      <td>
+        <span id='go'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-      haskell
-    </td>
-    <td>
-      <span id='haskell'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        haskell
+      </td>
+      <td>
+        <span id='haskell'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-      clojure
-    </td>
-    <td>
-      <span id='clojure'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        clojure
+      </td>
+      <td>
+        <span id='clojure'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-      scala
-    </td>
-    <td>
-      <span id='scala'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        scala
+      </td>
+      <td>
+        <span id='scala'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-     erlang
-    </td>
-    <td>
-      <span id='erlang'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        erlang
+      </td>
+      <td>
+        <span id='erlang'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-     elixir
-    </td>
-    <td>
-      <span id='elixir'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        elixir
+      </td>
+      <td>
+        <span id='elixir'></span>
+      </td>
+    </tr>
 
-  <tr>
-    <td>
-     VimL
-    </td>
-    <td>
-      <span id='viml'></span>
-    </td>
-  </tr>
+    <tr>
+      <td>
+        VimL
+      </td>
+      <td>
+        <span id='viml'></span>
+      </td>
+    </tr>
+    </tbody>
 </table>
-source: <a href="http://www.githubarchive.org/">Github Archive</a> 
+<br />
+<br />source: <a href="http://www.githubarchive.org/">Github Archive</a> 
+<br />
 <br /> Query: "SELECT STRFTIME_UTC_USEC(TIMESTAMP(repository_pushed_at), "%Y-%m-%d") as days, repository_language, count(repository_language) as lang_count
 FROM [githubarchive:github.timeline]
 WHERE type="PushEvent"
