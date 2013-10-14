@@ -16,7 +16,7 @@
           }
           return $("#" + language).sparkline(points.slice(0, points.length - 1), {
             width: 300,
-            height: 50,
+            height: 40,
             fillColor: '#fefefe',
             lineColor: '#101010'
           });
