@@ -1,0 +1,198 @@
+<div id="watch_counts">
+  <table class="sparklines">
+    <caption>Monthly Watch Counts, August 2008 - September 2013</caption>
+    <tbody>
+    <thead>
+      <th>
+        Language
+      </th>
+      <th>
+      </th>
+      <th>min</th>
+      <th></th>
+      <th>max</th>
+      </th>
+      <th></th>
+    </thead>
+
+    <tr id='javascript'>
+      <td>
+        javascript
+      </td>
+      <td>
+        <span id='javascript-sparkline'></span>
+      </td>
+      <td class='min'>
+      </td>
+      <td class='min-date'></td>
+      <td class='max'>
+      <td class='max-date'></td>
+      </td>
+    </tr>
+
+    <tr id='coffeescript'>
+      <td>
+        coffeescript
+      </td>
+      <td>
+        <span id='coffeescript-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='ruby'>
+      <td>
+        ruby </td>
+      <td>
+        <span id='ruby-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='python'>
+      <td>
+        python
+      </td>
+      <td>
+        <span id='python-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='php'>
+      <td>
+        php
+      </td>
+      <td>
+        <span id='php-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='java'>
+      <td>
+        java
+      </td>
+      <td>
+        <span id='java-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='go'>
+      <td>
+        go
+      </td>
+      <td>
+        <span id='go-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='haskell'>
+      <td>
+        haskell
+      </td>
+      <td>
+        <span id='haskell-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='clojure'>
+      <td>
+        clojure
+      </td>
+      <td>
+        <span id='clojure-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='scala'>
+      <td>
+        scala
+      </td>
+      <td>
+        <span id='scala-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id='erlang'>
+      <td>
+        erlang
+      </td>
+      <td>
+        <span id='erlang-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id="elixir">
+      <td>
+        elixir
+      </td>
+      <td>
+        <span id='elixir-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+
+    <tr id="viml">
+      <td>
+        VimL
+      </td>
+      <td>
+        <span id='viml-sparkline'></span>
+      </td>
+      <td class='min'></td>
+      <td class='min-date'></td>
+      <td class='max'></td>
+      <td class='max-date'></td>
+    </tr>
+    </tbody>
+</table>
+<br />
+<br />source: <a href="http://www.githubarchive.org/">Github Archive</a> 
+<br />
+<br /> Query: "SELECT STRFTIME_UTC_USEC(TIMESTAMP(repository_pushed_at), "%Y-%m") as months, repository_language, count(repository_language) as lang_count
+FROM [githubarchive:github.timeline]
+WHERE type="WatchEvent"
+    AND PARSE_UTC_USEC(created_at) >= PARSE_UTC_USEC('2008-04-01 00:00:00')
+    GROUP BY months, repository_language
+    ORDER BY repository_language DESC;"
+</div><!-- .welcome -->
